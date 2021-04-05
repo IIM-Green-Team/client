@@ -9,13 +9,13 @@ export const state = () => getDefaultState()
 export const actions = {
   updateCurrentProgression({ commit }, { progression }) {
     if (typeof progression === 'number') {
-      commit('updateCurrentProgression', { payload: progression })
+      commit('updateCurrentProgression', { progression })
     }
   },
 }
 
 export const mutations = {
-  updateCurrentProgression(state, { payload: progression = 0 }) {
+  updateCurrentProgression(state, { progression = 0 }) {
     state.progression = progression
   },
 }

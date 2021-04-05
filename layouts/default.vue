@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <app-header />
     <Nuxt />
   </div>
@@ -8,4 +8,8 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+.app-container {
+  padding: 16px 32px 0;
+}
+</style>
