@@ -1,1 +1,7 @@
+@import 'mixins';
 @import 'variables';
+@import 'transitions';
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}

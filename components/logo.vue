@@ -1,10 +1,15 @@
 <template>
-  <p class="logo">zerodechet</p>
+  <h1 class="logo"><span class="logo-highlight">zero</span>dechet</h1>
 </template>
 
-<style>
+<style lang="scss">
 .logo {
   animation: 1s appear;
+  text-transform: uppercase;
+
+  &-highlight {
+    color: $color-green;
+  }
 }
 
 @keyframes appear {

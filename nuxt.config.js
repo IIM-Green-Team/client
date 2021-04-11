@@ -14,7 +14,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['normalize.css/normalize.css', '@/assets/scss/main.scss'],
+  css: [
+    'normalize.css/normalize.css',
+    '@/assets/scss/main.scss',
+    'animate.css/animate.compat.css',
+  ],
   styleResources: {
     scss: ['~/assets/scss/_variables.scss'],
   },
@@ -42,5 +46,7 @@ export default {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['gsap'],
+  },
 }

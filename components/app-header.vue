@@ -1,6 +1,6 @@
 <template>
   <div class="app-header">
-    <logo class="logo" />
+    <logo />
     <breadcrumb class="breadcrumb" />
   </div>
 </template>
@@ -14,13 +14,6 @@ export default {}
   margin: 16px auto 16px;
   display: flex;
   justify-content: space-between;
-
-  .logo {
-    /* width: 250px; */
-  }
-
-  .breadcrumb {
-    /* flex-grow: 2; */
-  }
+  align-items: center;
 }
 </style>

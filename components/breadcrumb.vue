@@ -38,6 +38,7 @@ nav {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
   }
 
@@ -54,7 +55,7 @@ nav {
     right: $nav-padding;
     top: 50%;
 
-    background-color: $color-black;
+    background-color: $color-grey;
   }
 
   .nav-link {
@@ -63,7 +64,7 @@ nav {
     width: 20px;
     height: 20px;
 
-    border: solid 2px $color-black;
+    border: solid 2px $color-grey;
     border-radius: 50%;
     background-color: $color-white;
 
