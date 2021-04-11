@@ -1,6 +1,6 @@
 <template>
   <div class="app-header">
-    <logo class="logo" />
+    <logo />
     <breadcrumb class="breadcrumb" />
   </div>
 </template>

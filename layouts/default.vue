@@ -1,15 +1,25 @@
 <template>
   <div class="app-container">
     <app-header />
-    <Nuxt />
+    <Nuxt class="app-content" />
   </div>
 </template>
-<script>
-export default {}
-</script>
 
-<style>
+<style lang="scss">
 .app-container {
-  padding: 16px 32px 0;
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  min-height: 100vh;
+
+  background: url('@/assets/img/background.svg') no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+
+  overflow: hidden;
+  * {
+    box-sizing: border-box;
+  }
 }
 </style>

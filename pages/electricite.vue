@@ -4,15 +4,10 @@
 
 <script>
 import stepper from '@/mixins/stepper'
-import pageTransition from '@/utils/pageTranstion'
+import transition from '@/utils/pageTranstion'
+
 export default {
   mixins: [stepper('premiere-page')],
-  transition: pageTransition,
+  transition,
 }
 </script>
-
-<style lang="scss" scoped>
-div {
-  background-color: red;
-}
-</style>
