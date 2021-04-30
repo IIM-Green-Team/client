@@ -6,7 +6,7 @@
 import transition from '@/utils/pageTranstion'
 import stepper from '~/mixins/stepper'
 export default {
-  mixins: [stepper('info-alimentation')],
+  mixins: [stepper('alimentation-info')],
   transition,
 }
 </script>

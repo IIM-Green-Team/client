@@ -5,24 +5,43 @@
       sub-title="Comparez l’empreinte carbone de plusieurs moyens de transports entre eux"
     />
     <p class="form__title">
-      Pour <span><input value="12" type="number" /></span> kilomètres parcouru
+      Pour
+      <span><input v-model="kms" type="number" /></span> kilomètres parcouru
     </p>
     <div class="d-flex justify-content-around form">
       <div class="col-5">
         <div class="form__group">
           <label for="">Sélectionnez un moyen de transport</label>
-          <select name="" id=""></select>
+          <select @change="firstSelectedIndex = $event.target.value">
+            <option
+              v-for="(item, i) in transport"
+              :key="i"
+              :value="i"
+              :selected="firstSelectedIndex === i"
+            >
+              {{ item.titre }}
+            </option>
+          </select>
           <img src="" alt="" />
-          <span class="form__data">0.42</span>
+          <span class="form__data">{{ kms * firstSelected.CO2 }}</span>
           <span class="form__unit">KgCO2eq/kg</span>
         </div>
       </div>
       <div class="col-5">
         <div class="form__group">
           <label for="">Sélectionnez un moyen de transport</label>
-          <select name="" id=""></select>
+          <select @change="secondSelectedIndex = $event.target.value">
+            <option
+              v-for="(item, i) in transport"
+              :key="i"
+              :value="i"
+              :selected="secondSelectedIndex === i"
+            >
+              {{ item.titre }}
+            </option>
+          </select>
           <img src="" alt="" />
-          <span class="form__data">0.42</span>
+          <span class="form__data">{{ kms * secondSelected.CO2 }}</span>
           <span class="form__unit">KgCO2eq/kg</span>
         </div>
       </div>
@@ -31,11 +50,26 @@
 </template>
 
 <script>
-import transition from '@/utils/pageTranstion'
+import transport from '../static/api/transport.json'
 import stepper from '~/mixins/stepper'
 export default {
   mixins: [stepper('transport')],
-  transition,
+  data() {
+    return {
+      kms: 10,
+      transport,
+      firstSelectedIndex: 0,
+      secondSelectedIndex: 1,
+    }
+  },
+  computed: {
+    firstSelected() {
+      return this.transport[this.firstSelectedIndex]
+    },
+    secondSelected() {
+      return this.transport[this.secondSelectedIndex]
+    },
+  },
 }
 </script>
 

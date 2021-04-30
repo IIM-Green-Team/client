@@ -4,30 +4,58 @@
       title="Alimentation"
       sub-title="Comparez l’empreinte carbone de plusieurs aliments entre eux"
     />
-    <img class="arrow-img" src="../assets/img/arrow.png" alt="arrow" />
+    <img class="arrow-img" :src="arrow" alt="arrow" />
     <div class="d-flex flex-wrap">
       <div class="form col-12 col-sm-5">
         <p class="label">Sélectionnez un aliment</p>
+        <select @change="firstSelectedIndex = $event.target.value">
+          <option
+            v-for="(item, i) in fruits"
+            :key="i"
+            :value="i"
+            :selected="firstSelectedIndex === i"
+          >
+            {{ item.emoji }}
+            {{ item.label.fr }}
+          </option>
+        </select>
         <p class="label">Sélectionnez un deuxième aliment</p>
+        <select @change="secondSelectedIndex = $event.target.value">
+          <option
+            v-for="(item, i) in fruits"
+            :key="i"
+            :value="i"
+            :selected="secondSelectedIndex === i"
+          >
+            {{ item.emoji }}
+            {{ item.label.fr }}
+          </option>
+        </select>
         <p class="label">Sélectionnez un aliment transformé</p>
       </div>
       <div class="col-12 col-sm-7">
         <div class="graph">
           <div class="row">
-            <img class="icon" src="" alt="" />
-            <span class="bar"></span>
-            <span class="value">0.53</span>
+            <span class="icon">{{ firstSelected.emoji }}</span>
+            <span
+              :style="{ width: `${(firstSelected.CO2 * 100) / 5}%` }"
+              class="bar"
+            ></span>
+            <span class="value">{{ firstSelected.CO2 }}</span>
           </div>
 
           <div class="row">
-            <img class="icon" src="" alt="" />
-            <span class="bar"></span>
-            <span class="value">0.75</span>
+            <span class="icon">{{ secondSelected.emoji }}</span>
+            <span
+              :style="{ width: `${(secondSelected.CO2 * 100) / 5}%` }"
+              class="bar"
+            ></span>
+            <span class="value">{{ secondSelected.CO2 }}</span>
           </div>
 
           <div class="row">
-            <img class="icon" src="" alt="" />
-            <span class="bar"></span>
+            <img class="icon" :src="shoppingBasket" alt="shopping-basket" />
+            <span :style="{ width: '5%' }" class="bar"></span>
             <span class="value">1.2</span>
           </div>
         </div>
@@ -37,16 +65,32 @@
 </template>
 
 <script>
+import arrow from '../assets/img/arrow.png'
+import shoppingBasket from '../assets/img/shopping-basket.svg'
+import fruits from '../static/api/alimentation.json'
+import stepper from '~/mixins/stepper'
 export default {
+  mixins: [stepper('alimentation')],
   data() {
     return {
+      arrow,
+      shoppingBasket,
+      fruits,
+      firstSelectedIndex: 0,
+      secondSelectedIndex: 1,
       aliments: [],
     }
   },
-  async fetch() {
-    // await fetch('/api/alimentation').then((res) => {
-    //   console.log(res.json())
-    // })
+  computed: {
+    firstSelected() {
+      return this.fruits[this.firstSelectedIndex]
+    },
+    secondSelected() {
+      return this.fruits[this.secondSelectedIndex]
+    },
+    maxCO2() {
+      return Math.max(...this.fruits.map((product) => product.CO2))
+    },
   },
 }
 </script>
@@ -59,8 +103,8 @@ export default {
 }
 
 .graph {
+  position: relative;
   width: 100%;
-  height: 35vh;
   border-left: solid 1px $color-grey;
   border-bottom: solid 1px $color-grey;
 
@@ -75,17 +119,23 @@ export default {
   .row {
     display: flex;
     align-items: center;
-    padding: 20px 0 20px 15px;
+    padding: 20px 0 20px 0;
+    margin-left: -50px;
 
     .icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+      font-size: 25px;
     }
 
     .bar {
       height: 35px;
+      max-width: calc(100% - 100px);
       min-width: 20px;
       margin-right: 10px;
-      background-color: $color-lightgrey;
-      transition: width 2s ease;
+      background-color: #659a9730;
+      transition: width 1s ease;
     }
 
     .value {
@@ -101,6 +151,14 @@ export default {
     color: $color-blackgrey;
     font-weight: 400;
     letter-spacing: 0.01rem;
+  }
+
+  select {
+    padding: 5px 0;
+    margin-bottom: 50px;
+    border: none;
+    border-bottom: solid 1px $color-grey;
+    background-color: transparent;
   }
 }
 </style>

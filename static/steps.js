@@ -5,7 +5,7 @@ export default [
     issubpage: false,
   },
   {
-    name: 'alimentation',
+    name: 'alimentation-info',
     route: '/alimentation-info',
     issubpage: true,
   },
