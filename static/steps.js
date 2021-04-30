@@ -1,18 +1,18 @@
 export default [
   {
-    name: 'premiere-page',
+    name: 'alimentation',
+    route: '/alimentation',
+    issubpage: false,
+  },
+  {
+    name: 'electricite',
     route: '/electricite',
     issubpage: false,
   },
   {
     name: 'info-electricite',
-    route: '/electricite-more',
+    route: '/electricite-info',
     issubpage: true,
-  },
-  {
-    name: 'deuxième page',
-    route: '/alimentation',
-    issubpage: false,
   },
   {
     name: 'troisieme page',
