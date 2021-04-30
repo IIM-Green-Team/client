@@ -22,16 +22,17 @@ export default {
 
 <style lang="scss" scoped>
 .title-header {
-  margin-bottom: 20px;
+  margin: 0 0 20px 40px;
+  font-family: $font-poppins;
 
   h1 {
     color: $color-blue;
-    font-size: 24px;
+    font-size: 25px;
   }
 
   h2 {
     color: $color-lightblue;
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 </style>

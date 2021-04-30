@@ -4,9 +4,14 @@
       title="Alimentation"
       sub-title="Comparez l’empreinte carbone de plusieurs aliments entre eux"
     />
-    <div class="d-flex">
-      <div class="col-12 col-sm-5">Select</div>
-      <div class="col-12 col-sm-5">
+    <img class="arrow-img" src="../assets/img/arrow.png" alt="arrow" />
+    <div class="d-flex flex-wrap">
+      <div class="form col-12 col-sm-5">
+        <p class="label">Sélectionnez un aliment</p>
+        <p class="label">Sélectionnez un deuxième aliment</p>
+        <p class="label">Sélectionnez un aliment transformé</p>
+      </div>
+      <div class="col-12 col-sm-7">
         <div class="graph">
           <div class="row">
             <img class="icon" src="" alt="" />
@@ -47,6 +52,12 @@ export default {
 </script>
 
 <style lang="scss">
+.arrow-img {
+  padding: 30px 0;
+  margin-left: 35%;
+  width: 150px;
+}
+
 .graph {
   width: 100%;
   height: 35vh;
@@ -80,6 +91,16 @@ export default {
     .value {
       color: $color-yellow;
     }
+  }
+}
+
+.form {
+  font-family: $font-poppins;
+  .label {
+    margin-bottom: 10px;
+    color: $color-blackgrey;
+    font-weight: 400;
+    letter-spacing: 0.01rem;
   }
 }
 </style>

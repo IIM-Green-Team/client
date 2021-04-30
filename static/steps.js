@@ -5,6 +5,16 @@ export default [
     issubpage: false,
   },
   {
+    name: 'alimentation',
+    route: '/alimentation-info',
+    issubpage: true,
+  },
+  {
+    name: 'transport',
+    route: '/transport',
+    issubpage: false,
+  },
+  {
     name: 'electricite',
     route: '/electricite',
     issubpage: false,
@@ -15,13 +25,13 @@ export default [
     issubpage: true,
   },
   {
-    name: 'troisieme page',
-    route: '/transport',
+    name: 'textile',
+    route: '/textile',
     issubpage: false,
   },
   {
-    name: 'quatrieme page',
-    route: '/logement',
+    name: 'formulaire',
+    route: '/form',
     issubpage: false,
   },
 ]
