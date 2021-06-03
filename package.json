@@ -17,6 +17,7 @@
     "bootstrap": "^4.6.0",
     "core-js": "^3.9.1",
     "gsap": "^3.6.1",
+    "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.3"
