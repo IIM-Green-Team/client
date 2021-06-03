@@ -49,4 +49,6 @@ export default {
   build: {
     transpile: ['gsap'],
   },
+
+  // serverMiddleware: process.env.NOW_REGION ? [] : ['~/api/alimentation'],
 }

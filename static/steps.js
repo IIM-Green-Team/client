@@ -1,27 +1,37 @@
 export default [
   {
-    name: 'premiere-page',
+    name: 'alimentation',
+    route: '/alimentation',
+    issubpage: false,
+  },
+  {
+    name: 'alimentation-info',
+    route: '/alimentation-info',
+    issubpage: true,
+  },
+  {
+    name: 'transport',
+    route: '/transport',
+    issubpage: false,
+  },
+  {
+    name: 'electricite',
     route: '/electricite',
     issubpage: false,
   },
   {
     name: 'info-electricite',
-    route: '/electricite-more',
+    route: '/electricite-info',
     issubpage: true,
   },
   {
-    name: 'deuxième page',
-    route: '/alimentation',
+    name: 'textile',
+    route: '/textile',
     issubpage: false,
   },
   {
-    name: 'troisieme page',
-    route: '/transport',
-    issubpage: false,
-  },
-  {
-    name: 'quatrieme page',
-    route: '/logement',
+    name: 'formulaire',
+    route: '/form',
     issubpage: false,
   },
 ]

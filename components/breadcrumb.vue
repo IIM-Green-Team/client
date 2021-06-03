@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-$nav-padding: 10px;
+$nav-padding: 20px;
 nav {
   position: relative;
   ul {
@@ -61,8 +61,8 @@ nav {
   .nav-link {
     position: relative;
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 
     border: solid 2px $color-grey;
     border-radius: 50%;
@@ -81,10 +81,10 @@ nav {
         left: 50%;
         transform: translate(-50%, -50%);
         content: '';
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 13px;
         border-radius: 50%;
-        background-color: $color-green;
+        background-color: $color-blue;
       }
     }
 
@@ -95,8 +95,8 @@ nav {
       height: 16px;
 
       &::before {
-        width: 11px;
-        height: 11px;
+        width: 8px;
+        height: 8px;
       }
     }
   }

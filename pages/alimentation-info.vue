@@ -1,0 +1,109 @@
+<template>
+  <div>
+    <page-title
+      title="Recommandation alimentaire"
+      sub-title="Ce mois ci en Juin, nous pouvons consommer  comme fruits"
+    />
+
+    <div class="graph-info d-flex">
+      <div class="col-2" v-for="(product, i) in fruitsTrend" :key="i">
+        <div v-if="i <= 5">
+          <p class="title">{{ product.label.fr }}</p>
+          <p class="subtitle">{{ product.CO2 }} KgCO2eq</p>
+          <span class="icon-info">{{ product.emoji }}</span>
+          <p class="month" v-for="(item, index) in product.months" :key="index">
+            {{ monthName[item] }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import fruits from '../static/api/alimentation.json'
+import stepper from '~/mixins/stepper'
+export default {
+  data() {
+    return {
+      fruits,
+    }
+  },
+  mixins: [stepper('alimentation-info')],
+
+  computed: {
+    fruitsTrend() {
+      const currentMonnth = new Date().getMonth()
+      const fruits = this.fruits
+        .filter((product) => product.months.includes(currentMonnth))
+        .sort((a, b) => (a.CO2 > b.CO2 ? 1 : -1))
+      return fruits
+    },
+
+    monthName() {
+      return [
+        'janvier',
+        'février',
+        'mars',
+        'avril',
+        'mai',
+        'juin',
+        'juillet',
+        'août',
+        'septembre',
+        'octobre',
+        'novembre',
+        'décembre',
+      ]
+    },
+  },
+}
+</script>
+
+<style lang="scss">
+.graph-info {
+  margin-top: 40px;
+}
+
+p {
+  font-family: $font-poppins;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+  color: $color-blue;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: $color-blackgrey;
+}
+
+.col-2 {
+  text-align: center;
+}
+
+.icon-info {
+  position: relative;
+  font-size: 3rem;
+
+  &:before {
+    display: block;
+    margin-left: 50%;
+    content: '';
+    width: 1px;
+    height: 100px;
+    background-color: $color-grey;
+  }
+}
+
+.month {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 4px;
+  color: $color-blackgrey;
+}
+</style>

@@ -1,6 +1,8 @@
 @import 'mixins';
+@import 'fonts';
 @import 'variables';
 @import 'transitions';
+@import '~bootstrap/scss/bootstrap-grid';
 
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;

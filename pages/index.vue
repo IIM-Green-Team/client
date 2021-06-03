@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <nuxt-link to="/electricite">click me</nuxt-link>
+    <nuxt-link to="/alimentation">click me</nuxt-link>
   </div>
 </template>
 
