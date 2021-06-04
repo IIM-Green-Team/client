@@ -21,11 +21,13 @@
 </template>
 
 <script>
+import transition from '@/utils/pageTranstion'
+import stepper from '@/mixins/stepper'
 import fruits from '../static/api/alimentation.json'
-import stepper from '~/mixins/stepper'
 export default {
   data() {
     return {
+      transition,
       fruits,
     }
   },

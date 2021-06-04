@@ -75,12 +75,15 @@
 </template>
 
 <script>
+import transition from '@/utils/pageTranstion'
+import stepper from '@/mixins/stepper'
 import transport from '../static/api/transport.json'
-import stepper from '~/mixins/stepper'
+
 export default {
   mixins: [stepper('transport')],
   data() {
     return {
+      transition,
       kms: 10,
       transport,
       firstSelectedIndex: 0,
