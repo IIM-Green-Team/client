@@ -6,7 +6,7 @@
     />
     <img class="arrow-img" :src="arrow" alt="arrow" />
     <div class="d-flex flex-wrap">
-      <div class="form col-12 col-sm-5">
+      <div class="form-alim col-12 col-sm-5">
         <p class="label">Sélectionnez un aliment</p>
         <select @change="firstSelectedIndex = $event.target.value">
           <option
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import transition from '@/utils/pageTranstion'
 import arrow from '../assets/img/arrow.png'
 import shoppingBasket from '../assets/img/shopping-basket.svg'
 import fruits from '../static/api/alimentation.json'
@@ -76,6 +77,7 @@ export default {
       arrow,
       shoppingBasket,
       fruits,
+      transition,
       firstSelectedIndex: 0,
       secondSelectedIndex: 1,
       aliments: [],
@@ -109,7 +111,7 @@ export default {
   border-bottom: solid 1px $color-grey;
 
   &:after {
-    content: 'CO2eq/KgKg';
+    content: 'CO2eq/Kg';
     position: absolute;
     bottom: -30px;
     right: 0;
@@ -144,7 +146,7 @@ export default {
   }
 }
 
-.form {
+.form-alim {
   font-family: $font-poppins;
   .label {
     margin-bottom: 10px;

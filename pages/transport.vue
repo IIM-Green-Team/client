@@ -22,8 +22,21 @@
               {{ item.titre }}
             </option>
           </select>
-          <img src="" alt="" />
-          <span class="form__data">{{ kms * firstSelected.CO2 }}</span>
+          <img
+            class="img-select"
+            :src="
+              require(`../assets/img/transports/${firstSelected.label}.svg`)
+            "
+            :alt="firstSelected.label"
+          />
+          {{ firstSelected.label }}
+          <span class="form__data">{{
+            kms * firstSelected.CO2 > 1000000
+              ? Math.round((kms * firstSelected.CO2) / 100000) / 10
+              : kms * firstSelected.CO2 > 1000
+              ? Math.round((kms * firstSelected.CO2) / 100) / 10
+              : Math.round(kms * firstSelected.CO2 * 10) / 10
+          }}</span>
           <span class="form__unit">KgCO2eq/kg</span>
         </div>
       </div>
@@ -40,8 +53,20 @@
               {{ item.titre }}
             </option>
           </select>
-          <img src="" alt="" />
-          <span class="form__data">{{ kms * secondSelected.CO2 }}</span>
+          <img
+            class="img-select"
+            :src="
+              require(`../assets/img/transports/${secondSelected.label}.svg`)
+            "
+            :alt="secondSelected.label"
+          />
+          <span class="form__data">{{
+            kms * secondSelected.CO2 > 1000000
+              ? Math.round((kms * secondSelected.CO2) / 100000) / 10
+              : kms * secondSelected.CO2 > 1000
+              ? Math.round((kms * secondSelected.CO2) / 100) / 10
+              : Math.round(kms * secondSelected.CO2 * 10) / 10
+          }}</span>
           <span class="form__unit">KgCO2eq/kg</span>
         </div>
       </div>
@@ -104,9 +129,23 @@ export default {
     }
 
     select {
+      padding: 8px 0;
       width: 80%;
       border: none;
       border-bottom: solid 1px $color-grey;
+
+      &:hover {
+        border-bottom: solid 1px $color-black;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .img-select {
+      padding: 10px;
+      width: 50%;
     }
   }
 
