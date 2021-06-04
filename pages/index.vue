@@ -37,7 +37,7 @@ export default {
 
 .content {
   position: absolute;
-  top: 30%;
+  top: 20%;
   width: 100%;
   text-align: center;
 
