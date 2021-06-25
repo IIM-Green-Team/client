@@ -20,11 +20,6 @@ export default [
     issubpage: false,
   },
   {
-    name: 'info-electricite',
-    route: '/electricite-info',
-    issubpage: true,
-  },
-  {
     name: 'textile',
     route: '/textile',
     issubpage: false,

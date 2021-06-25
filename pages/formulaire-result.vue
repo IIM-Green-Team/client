@@ -5,7 +5,7 @@
   >
     <div class="col-10">
       <page-title title="Résultats" sub-title="" />
-      <h2 class="h2 note-result">{{ totalAll }} / 42</h2>
+      <h2 class="h2 note-result">{{ score }} / 42</h2>
       <div class="note-details">
         <!-- <p>
         Aïe... le zéro déchet ne semble pas être votre priorité. Redoublez
@@ -27,6 +27,29 @@
   </div>
 </template>
 
+<script>
+import transition from '@/utils/pageTranstion'
+import stepper from '@/mixins/stepper'
+import { mapGetters } from 'vuex'
+
+export default {
+  mixins: [stepper('')],
+  data() {
+    return {
+      transition,
+    }
+  },
+
+  mounted() {
+    console.log(this.currentQuestions)
+  },
+
+  computed: {
+    ...mapGetters(['score', 'currentQuestions']),
+  },
+}
+</script>
+
 <style lang="scss">
 .note-result {
   margin-top: 100px;
@@ -35,6 +58,7 @@
 }
 
 .note-details {
+  margin-left: 60px;
   color: $color-blackgrey;
 }
 </style>
