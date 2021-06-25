@@ -1,13 +1,18 @@
 <template>
   <div class="electricite">
-    <page-title title="Electricité" />
     <div class="container-fluid">
-      <div class="row mx-2">
-        <div class="col-12 col-sm-6">
+      <div class="row mx-2 justify-content-around">
+        <div class="col-12 col-sm-4">
+          <h1 class="electricite__title--main">Electricité</h1>
+        </div>
+        <div class="col-12 col-sm-5"></div>
+      </div>
+      <div class="row mx-2 justify-content-around">
+        <div class="col-12 col-sm-4">
           <h3 class="electricite__title">Choisissez l’équipement voulue</h3>
           <div class="row">
             <div
-              v-for="({ equipements, label }, index) in electriciteData"
+              v-for="({ label }, index) in electriciteData"
               :key="index"
               class="col-6 electricite__item"
               :class="{
@@ -18,13 +23,13 @@
               @keypress.enter="onItemClick(label, index)"
             >
               <img :src="require(`../assets/img/electricite/${label}.svg`)" />
-              <div class="electricite__label">{{ equipements }}</div>
+              <!-- <div class="electricite__label">{{ equipements }}</div> -->
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-5">
           <h3 class="electricite__title">
-            Sa consommation énergetique en kWh/m2/an
+            Sa consommation énergetique moyenne en kWh/m2/an
           </h3>
           <div class="electricite__conso-container">
             <div
@@ -120,10 +125,16 @@ export default {
   &__title {
     font-size: 24px;
     color: $color-lightblue;
+
+    &--main {
+      font-size: 30px;
+      color: $color-blue;
+      margin: 0;
+    }
   }
   &__item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     margin: 32px 0;
 
@@ -137,9 +148,10 @@ export default {
     }
   }
   &__label {
+    position: relative;
     margin-top: 16px;
+    transform: translateX(-25%);
     font-size: 14px;
-    width: 70%;
     color: $color-blackgrey;
   }
   &__conso-container {
