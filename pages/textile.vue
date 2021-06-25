@@ -87,6 +87,8 @@ export default {
   }
 
   .img-person {
+    display: block;
+    height: 420px;
     width: 300px;
   }
 }

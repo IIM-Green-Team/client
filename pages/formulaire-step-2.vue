@@ -1,165 +1,26 @@
 <template>
   <div class="page-formulaire">
     <div class="col-2">step</div>
+
     <div class="c-form col-8">
-      <div class="c-form__group">
-        <p class="col-12 c-form__question">Question 5</p>
-        <p class="col-12 c-form__title">
-          À quelle fréquence achetez-vous vos vêtements ?
-        </p>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q5"
-            id="13"
-            value="1"
-            v-model="picked5"
-            required
-          />
-          <label for="13">Plusieurs fois par semaine <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q5"
-            id="14"
-            value="2"
-            v-model="picked5"
-            required
-          />
-          <label for="14">Une fois par mois <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q5"
-            id="15"
-            value="3"
-            v-model="picked5"
-            required
-          />
-          <label for="15">Une fois par an <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q5"
-            id="16"
-            value="4"
-            v-model="picked5"
-            required
-          />
-          <label for="16">Jamais <span></span></label>
-        </div>
-      </div>
-      <div class="c-form__group">
-        <p class="col-12 c-form__question">Question 6</p>
-        <p class="col-12 c-form__title">
-          À quelle fréquence jetez-vous vos vêtements ?
-        </p>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q6"
-            id="17"
-            value="1"
-            v-model="picked6"
-            required
-          />
-          <label for="17">Plusieurs fois par semaine <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q6"
-            id="18"
-            value="2"
-            v-model="picked6"
-            required
-          />
-          <label for="18">Une fois par mois <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q6"
-            id="19"
-            value="3"
-            v-model="picked6"
-            required
-          />
-          <label for="19">Une fois par an <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q6"
-            id="20"
-            value="4"
-            v-model="picked6"
-            required
-          />
-          <label for="20">Jamais <span></span></label>
-        </div>
-      </div>
-      <div class="c-form__group">
-        <p class="col-12 c-form__question">Question 7</p>
-        <p class="col-12 c-form__title">Où achetez-vous vos vétements ?</p>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q7"
-            id="21"
-            value="1"
-            v-model="picked7"
-            required
-          />
-          <label for="21">Magasin (Zara, H&M etc..) <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q7"
-            id="22"
-            value="2"
-            v-model="picked7"
-            required
-          />
-          <label for="22">En ligne (Asos) <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q7"
-            id="23"
-            value="3"
-            v-model="picked7"
-            required
-          />
-          <label for="23">Site de revente (Vinted) <span></span></label>
-        </div>
-        <div class="c-form__group--radio">
-          <input
-            class="radio"
-            type="radio"
-            name="q7"
-            id="24"
-            value="4"
-            v-model="picked7"
-            required
-          />
-          <label for="24">Friperie <span></span></label>
+      <div v-for="question in questions" :key="question.id">
+        <div class="c-form__group">
+          <p class="col-12 c-form__question">Question {{ question.id }}</p>
+          <p class="col-12 c-form__title">{{ question.name }}</p>
+          <div v-for="value in question.values" :key="value.id">
+            <div class="c-form__group--radio">
+              <input
+                :id="value.id"
+                class="radio"
+                :value="value.note"
+                type="radio"
+                :name="question.id"
+                required
+                @change="onInputChange"
+              />
+              <label :for="value.id">{{ value.text }} <span></span> </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -172,35 +33,55 @@
 <script>
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
+import { mapActions } from 'vuex'
 
 export default {
   mixins: [stepper('')],
   data() {
     return {
       transition,
-      picked5: 0,
-      picked6: 0,
-      picked7: 0,
+      questions: [
+        {
+          id: 5,
+          name: 'À quelle fréquence achetez-vous vos vêtements ? ?',
+          values: [
+            { text: 'Plusieurs fois par semaine', id: 13, note: 1 },
+            { text: 'Une fois par mois', id: 14, note: 2 },
+            { text: 'Une fois par an', id: 15, note: 3 },
+            { text: 'Jamais', id: 16, note: 4 },
+          ],
+        },
+        {
+          id: 6,
+          name: 'À quelle fréquence jetez-vous vos vêtements ?',
+          values: [
+            { text: 'Plusieurs fois par semaine', id: 17, note: 1 },
+            { text: 'Une fois par mois', id: 18, note: 2 },
+            { text: 'Une fois par an', id: 19, note: 3 },
+            { text: 'Jamais', id: 20, note: 4 },
+          ],
+        },
+        {
+          id: 7,
+          name: 'Où achetez-vous vos vétements ?',
+          values: [
+            { text: 'Magasin (Zara, H&M etc..)', id: 21, note: 1 },
+            { text: 'En ligne (Asos)', id: 22, note: 2 },
+            { text: 'Site de revente (Vinted)', id: 23, note: 3 },
+            { text: 'Friperie', id: 24, note: 4 },
+          ],
+        },
+      ],
     }
   },
-  watch: {
-    picked5() {
-      this.$emit(
-        'child-total2',
-        parseInt(this.picked5) + parseInt(this.picked6) + parseInt(this.picked7)
-      )
-    },
-    picked6() {
-      this.$emit(
-        'child-total2',
-        parseInt(this.picked5) + parseInt(this.picked6) + parseInt(this.picked7)
-      )
-    },
-    picked7() {
-      this.$emit(
-        'child-total2',
-        parseInt(this.picked5) + parseInt(this.picked6) + parseInt(this.picked7)
-      )
+
+  mounted() {
+    this.updateQuestionScore({ id: 1, value: 3 })
+  },
+  methods: {
+    ...mapActions(['updateQuestionScore']),
+    onInputChange(e) {
+      this.updateQuestionScore({ id: +e.target.name, value: +e.target.value })
     },
   },
 }
