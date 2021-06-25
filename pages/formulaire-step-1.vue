@@ -7,36 +7,38 @@
         <p class="col-12 c-form__title">Achètes-tu uniquement du bio ?</p>
         <div class="c-form__group--radio">
           <input
+            id="1"
+            v-model="picked1"
             class="radio"
             type="radio"
             name="q1"
-            id="1"
             value="1"
-            v-model="picked1"
             required
+            @change="onInputChange"
           />
           <label for="1">Jamais <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            v-model="picked1"
+            data-id="2"
             class="radio"
             type="radio"
             name="q1"
-            id="2"
             value="2"
-            v-model="picked1"
             required
+            @change="onInputChange"
           />
           <label for="2">1 repas sur 2 <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="3"
+            v-model="picked1"
             class="radio"
             type="radio"
             name="q1"
-            id="3"
             value="3"
-            v-model="picked1"
             required
           />
           <label for="3">Tous les repas <span></span></label>
@@ -50,36 +52,36 @@
         </p>
         <div class="c-form__group--radio">
           <input
+            id="4"
+            v-model="picked2"
             class="radio"
             type="radio"
             name="q2"
-            id="4"
             value="1"
-            v-model="picked2"
             required
           />
           <label for="4">Jamais <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="5"
+            v-model="picked2"
             class="radio"
             type="radio"
             name="q2"
-            id="5"
             value="2"
-            v-model="picked2"
             required
           />
           <label for="5">1 repas sur 2 <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="6"
+            v-model="picked2"
             class="radio"
             type="radio"
             name="q2"
-            id="6"
             value="3"
-            v-model="picked2"
             required
           />
           <label for="6">Tous les repas <span></span></label>
@@ -92,36 +94,36 @@
         </p>
         <div class="c-form__group--radio">
           <input
+            id="7"
+            v-model="picked3"
             class="radio"
             type="radio"
             name="q3"
-            id="7"
             value="1"
-            v-model="picked3"
             required
           />
           <label for="7">Jamais <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="8"
+            v-model="picked3"
             class="radio"
             type="radio"
             name="q3"
-            id="8"
             value="2"
-            v-model="picked3"
             required
           />
           <label for="8">1 repas sur 2 <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="9"
+            v-model="picked3"
             class="radio"
             type="radio"
             name="q3"
-            id="9"
             value="3"
-            v-model="picked3"
             required
           />
           <label for="9">Tous les repas <span></span></label>
@@ -134,36 +136,36 @@
         </p>
         <div class="c-form__group--radio">
           <input
+            id="10"
+            v-model="picked4"
             class="radio"
             type="radio"
             name="q4"
-            id="10"
             value="1"
-            v-model="picked4"
             required
           />
           <label for="10">Plusieurs fois par semaine <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="11"
+            v-model="picked4"
             class="radio"
             type="radio"
             name="q4"
-            id="11"
             value="2"
-            v-model="picked4"
             required
           />
           <label for="11">De temps en temps <span></span></label>
         </div>
         <div class="c-form__group--radio">
           <input
+            id="12"
+            v-model="picked4"
             class="radio"
             type="radio"
             name="q4"
-            id="12"
             value="3"
-            v-model="picked4"
             required
           />
           <label for="12">Presque jamais <span></span></label>
@@ -179,6 +181,7 @@
 <script>
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
+import { mapActions } from 'vuex'
 
 export default {
   mixins: [stepper('')],
@@ -227,6 +230,18 @@ export default {
           parseInt(this.picked3) +
           parseInt(this.picked4)
       )
+    },
+  },
+  mounted() {
+    this.updateQuestionScore({ id: 1, value: 3 })
+  },
+  methods: {
+    ...mapActions(['updateQuestionScore']),
+    onInputChange(e) {
+      console.log({ value: +e.target.value, id: +e.target.id })
+      // recupere l'id
+      // recupere la valeur
+      // this.updateQuestionScore({ id: 1, value: 3 })
     },
   },
 }
