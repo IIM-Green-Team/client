@@ -29,7 +29,6 @@
             "
             :alt="firstSelected.label"
           />
-          {{ firstSelected.label }}
           <span class="form__data">{{
             kms * firstSelected.CO2 > 1000000
               ? Math.round((kms * firstSelected.CO2) / 100000) / 10

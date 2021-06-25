@@ -111,7 +111,7 @@ export default {
   border-bottom: solid 1px $color-grey;
 
   &:after {
-    content: 'CO2eq/Kg';
+    content: 'KgCO2eq/Kg';
     position: absolute;
     bottom: -30px;
     right: 0;
