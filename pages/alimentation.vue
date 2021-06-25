@@ -72,9 +72,9 @@ import shoppingBasket from '../assets/img/shopping-basket.svg'
 import fruits from '../static/api/alimentation.json'
 export default {
   mixins: [stepper('alimentation')],
+  transition,
   data() {
     return {
-      transition,
       arrow,
       shoppingBasket,
       fruits,

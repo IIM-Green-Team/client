@@ -81,6 +81,7 @@ import transport from '../static/api/transport.json'
 
 export default {
   mixins: [stepper('transport')],
+  transition,
   data() {
     return {
       transition,

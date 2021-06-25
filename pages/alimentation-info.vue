@@ -6,12 +6,12 @@
     />
 
     <div class="graph-info d-flex">
-      <div class="col-2" v-for="(product, i) in fruitsTrend" :key="i">
+      <div v-for="(product, i) in fruitsTrend" :key="i" class="col-2">
         <div v-if="i <= 5">
           <p class="title">{{ product.label.fr }}</p>
           <p class="subtitle">{{ product.CO2 }} KgCO2eq</p>
           <span class="icon-info">{{ product.emoji }}</span>
-          <p class="month" v-for="(item, index) in product.months" :key="index">
+          <p v-for="(item, index) in product.months" :key="index" class="month">
             {{ monthName[item] }}
           </p>
         </div>
@@ -25,9 +25,9 @@ import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
 import fruits from '../static/api/alimentation.json'
 export default {
+  transition,
   data() {
     return {
-      transition,
       fruits,
     }
   },
