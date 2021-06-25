@@ -1,0 +1,38 @@
+[
+  {
+    "equipements": "Réfrigirateur/ congélateur (275 litres)",
+    "conso_peu_efficaces": "245 kWh",
+    "conso_efficaces": "125 kWh",
+    "label": "fridge"
+  },
+  {
+    "equipements": "Machine à laver (8 kg)",
+    "conso_peu_efficaces": "195 kWh",
+    "conso_efficaces": "150 kWh",
+    "label": "washing-machine"
+  },
+  {
+    "equipements": "Lave-vaisselle (12 couverts)",
+    "conso_peu_efficaces": "225 kWh",
+    "conso_efficaces": "175 kWh",
+    "label": "dishwasher"
+  },
+  {
+    "equipements": "Sèche-linge (8 kg)",
+    "conso_peu_efficaces": "560 kWh",
+    "conso_efficaces": "170 kWh",
+    "label": "dryer"
+  },
+  {
+    "equipements": "Ordinateur",
+    "conso_peu_efficaces": "85 kWh",
+    "conso_efficaces": "20 kWh",
+    "label": "computer"
+  },
+  {
+    "equipements": "Téléviseur (100 cm)",
+    "conso_peu_efficaces": "145 kWh",
+    "conso_efficaces": "55 kWh",
+    "label": "tv"
+  }
+ ]
