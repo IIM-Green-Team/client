@@ -40,12 +40,11 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.currentQuestions)
-  },
-
   computed: {
-    ...mapGetters(['score', 'currentQuestions']),
+    ...mapGetters(['currentQuestions']),
+    score() {
+      return Object.values(this.currentQuestions).reduce((a, c) => +a + +c, 0)
+    },
   },
 }
 </script>

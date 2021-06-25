@@ -32,6 +32,4 @@ export const mutations = {
 export const getters = {
   currentProgression: (state) => state.progression,
   currentQuestions: (state) => state.questions,
-  score: (state) =>
-    Object.values(state.questions).reduce((accum, value) => accum + value, 0),
 }

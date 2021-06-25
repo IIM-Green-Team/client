@@ -70,10 +70,6 @@ export default {
       ],
     }
   },
-
-  mounted() {
-    this.updateQuestionScore({ id: 1, value: 3 })
-  },
   methods: {
     ...mapActions(['updateQuestionScore']),
     onInputChange(e) {
