@@ -25,13 +25,13 @@ import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
 import fruits from '../static/api/alimentation.json'
 export default {
+  mixins: [stepper('alimentation-info')],
   transition,
   data() {
     return {
       fruits,
     }
   },
-  mixins: [stepper('alimentation-info')],
 
   computed: {
     fruitsTrend() {

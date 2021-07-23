@@ -25,6 +25,16 @@
   </div>
 </template>
 
+<script>
+import stepper from '@/mixins/stepper'
+import transition from '@/utils/pageTranstion'
+
+export default {
+  mixins: [stepper('formulaire')],
+  transition,
+}
+</script>
+
 <style lang="scss">
 .formulaire-intro {
   margin-top: 50px;

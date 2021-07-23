@@ -33,7 +33,8 @@ import stepper from '@/mixins/stepper'
 import { mapGetters } from 'vuex'
 
 export default {
-  mixins: [stepper('')],
+  mixins: [stepper('formulaire-result')],
+  transition,
   data() {
     return {
       transition,

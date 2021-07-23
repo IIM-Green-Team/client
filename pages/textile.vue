@@ -43,7 +43,7 @@ import person from '../assets/img/person.svg'
 import shower from '../assets/img/shower.svg'
 
 export default {
-  mixins: [stepper('')],
+  mixins: [stepper('textile')],
   data() {
     return {
       transition,
