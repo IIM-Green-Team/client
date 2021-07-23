@@ -11,7 +11,7 @@
         Sous forme de storytelling, parcourez une série d’étapes afin de
         <br />prendre conscience l’impact des déchets sur notre environnement
       </p>
-      <nuxt-link class="link" to="/alimentation">Commencer</nuxt-link>
+      <nuxt-link class="link-intro" to="/alimentation">Commencer</nuxt-link>
     </div>
     <img class="img-intro" src="../assets/img/intro-img.png" alt="intro" />
   </div>
@@ -60,7 +60,9 @@ export default {
   width: 100%;
 }
 
-.link {
+.link-intro {
+  margin-top: 50px;
+  z-index: 3;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

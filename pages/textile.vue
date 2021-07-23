@@ -43,7 +43,7 @@ import person from '../assets/img/person.svg'
 import shower from '../assets/img/shower.svg'
 
 export default {
-  mixins: [stepper('')],
+  mixins: [stepper('textile')],
   data() {
     return {
       transition,
@@ -87,6 +87,8 @@ export default {
   }
 
   .img-person {
+    display: block;
+    height: 420px;
     width: 300px;
   }
 }

@@ -1,0 +1,116 @@
+.page-formulaire {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-form {
+  justify-content: center;
+
+  &__title {
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &__question {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: $color-lightblue;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__group {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    color: $color-blackgrey;
+
+    input,
+    label {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .input {
+      padding: 15px 0;
+      width: 100%;
+      border: none;
+      border-bottom: solid 1px $color-black;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &--radio {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-left: 15px;
+      font-size: 14px;
+
+      input[type='radio'] {
+        display: none;
+
+        +label {
+          color: $color-blackgrey;
+
+          span {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0px 10px 0 7px;
+            vertical-align: middle;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid $color-blackgrey;
+          }
+        }
+
+        &:checked+label span {
+          &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 9px;
+            height: 9px;
+            background-color: $color-blackgrey;
+            border-radius: 2px;
+          }
+        }
+      }
+
+      .radio {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: initial;
+    padding: 7px 25px;
+    font-size: 14px;
+    border: none;
+    color: $color-white;
+    font-family: 'Montserrat', sans-serif;
+    background-color: $color-green;
+    border-radius: 5px;
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
