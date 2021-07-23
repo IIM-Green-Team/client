@@ -1,14 +1,14 @@
 // previous
 .slide-previous-leave-active {
-  animation: fadeOutDown 0.5s;
+  animation: fadeOutRight 0.5s, fadeOut 0.1s;
 }
 .slide-previous-enter-active {
-  animation: fadeInDown 0.5s;
+  animation: fadeInLeft 0.5s;
 }
 // next
 .slide-next-enter-active {
-  animation: fadeInUp 0.5s;
+  animation: fadeInRight 0.5s;
 }
 .slide-next-leave-active {
-  animation: fadeOutUp 0.5s;
+  animation: fadeOutLeft 0.5s, fadeOut 0.1s;
 }

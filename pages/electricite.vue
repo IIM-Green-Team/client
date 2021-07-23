@@ -23,7 +23,6 @@
               @keypress.enter="onItemClick(label, index)"
             >
               <img :src="require(`../assets/img/electricite/${label}.svg`)" />
-              <!-- <div class="electricite__label">{{ equipements }}</div> -->
             </div>
           </div>
         </div>
