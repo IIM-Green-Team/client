@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .title-header {
-  margin: 0 0 20px 70px;
+  margin: 0 0 20px 0;
   font-family: $font-poppins;
 
   h1 {
