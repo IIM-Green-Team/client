@@ -39,11 +39,12 @@
 <script>
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
+import tipContent from '@/mixins/tipContent'
 import person from '../assets/img/person.svg'
 import shower from '../assets/img/shower.svg'
 
 export default {
-  mixins: [stepper('')],
+  mixins: [stepper('textile'), tipContent('textile')],
   data() {
     return {
       transition,

@@ -2,6 +2,8 @@ const getDefaultState = () => {
   return {
     progression: 0,
     questions: {},
+    modal: false,
+    modalContent: {},
   }
 }
 
@@ -18,6 +20,15 @@ export const actions = {
       commit('updateQuestionScore', { id, value })
     }
   },
+  closeModal({ commit }) {
+    commit('handleModal', false)
+  },
+  openModal({ commit }) {
+    commit('handleModal', true)
+  },
+  setModalContent({ commit }, payload) {
+    commit('setModalContent', payload)
+  },
 }
 
 export const mutations = {
@@ -27,11 +38,17 @@ export const mutations = {
   updateQuestionScore(state, { id = null, value = 0 }) {
     state.questions[id] = value
   },
+  handleModal(state, payload) {
+    state.modal = payload
+  },
+  setModalContent(state, payload) {
+    state.modalContent = payload
+  },
 }
 
 export const getters = {
   currentProgression: (state) => state.progression,
   currentQuestions: (state) => state.questions,
-  score: (state) =>
-    Object.values(state.questions).reduce((accum, value) => accum + value, 0),
+  modal: (state) => state.modal,
+  modalContent: (state) => state.modalContent,
 }

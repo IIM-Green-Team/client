@@ -23,7 +23,6 @@
               @keypress.enter="onItemClick(label, index)"
             >
               <img :src="require(`../assets/img/electricite/${label}.svg`)" />
-              <!-- <div class="electricite__label">{{ equipements }}</div> -->
             </div>
           </div>
         </div>
@@ -66,6 +65,7 @@
 import stepper from '@/mixins/stepper'
 import transition from '@/utils/pageTranstion'
 import electriciteData from '@/static/api/electricite.json'
+import tipContent from '@/mixins/tipContent'
 
 export default {
   filters: {
@@ -73,7 +73,7 @@ export default {
       return value.toString().replace('.', ',')
     },
   },
-  mixins: [stepper('electricite')],
+  mixins: [stepper('electricite'), tipContent('electricite')],
   transition,
   data() {
     return {

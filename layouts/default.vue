@@ -4,6 +4,8 @@
     <Nuxt class="app-content" />
     <next-btn />
     <light-logo />
+    <app-footer />
+    <app-modal />
   </div>
 </template>
 
@@ -22,6 +24,9 @@
   overflow: hidden;
   * {
     box-sizing: border-box;
+  }
+  .app-content {
+    padding: 0 70px;
   }
 }
 </style>

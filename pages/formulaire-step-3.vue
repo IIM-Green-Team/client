@@ -36,10 +36,10 @@ import stepper from '@/mixins/stepper'
 import { mapActions } from 'vuex'
 
 export default {
-  mixins: [stepper('')],
+  mixins: [stepper('formulaire-step-3')],
+  transition,
   data() {
     return {
-      transition,
       questions: [
         {
           id: 8,
@@ -69,10 +69,6 @@ export default {
         },
       ],
     }
-  },
-
-  mounted() {
-    this.updateQuestionScore({ id: 1, value: 3 })
   },
   methods: {
     ...mapActions(['updateQuestionScore']),

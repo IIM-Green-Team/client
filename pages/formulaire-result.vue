@@ -31,21 +31,22 @@
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
 import { mapGetters } from 'vuex'
+import tipContent from '@/mixins/tipContent'
 
 export default {
-  mixins: [stepper('')],
+  mixins: [stepper('formulaire-result'), tipContent('formulaire-result')],
+  transition,
   data() {
     return {
       transition,
     }
   },
 
-  mounted() {
-    console.log(this.currentQuestions)
-  },
-
   computed: {
-    ...mapGetters(['score', 'currentQuestions']),
+    ...mapGetters(['currentQuestions']),
+    score() {
+      return Object.values(this.currentQuestions).reduce((a, c) => +a + +c, 0)
+    },
   },
 }
 </script>
