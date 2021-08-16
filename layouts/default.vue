@@ -2,6 +2,8 @@
   <div class="app-container">
     <app-header />
     <Nuxt class="app-content" />
+    <next-btn />
+    <light-logo />
   </div>
 </template>
 

@@ -1,9 +1,24 @@
 <template>
-  <h1 class="logo"><span class="logo-highlight">zero</span>dechet</h1>
+  <a href="/">
+    <img class="logo" :src="logo" alt="logo" />
+  </a>
 </template>
+
+<script>
+import logo from 'assets/img/logo.png'
+
+export default {
+  data() {
+    return {
+      logo,
+    }
+  },
+}
+</script>
 
 <style lang="scss">
 .logo {
+  width: 100px;
   animation: 1s appear;
   text-transform: uppercase;
 
