@@ -31,9 +31,10 @@
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
 import { mapGetters } from 'vuex'
+import tipContent from '@/mixins/tipContent'
 
 export default {
-  mixins: [stepper('formulaire-result')],
+  mixins: [stepper('formulaire-result'), tipContent('formulaire-result')],
   transition,
   data() {
     return {

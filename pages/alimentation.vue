@@ -67,11 +67,12 @@
 <script>
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
+import tipContent from '@/mixins/tipContent'
 import arrow from '../assets/img/arrow.png'
 import shoppingBasket from '../assets/img/shopping-basket.svg'
 import fruits from '../static/api/alimentation.json'
 export default {
-  mixins: [stepper('alimentation')],
+  mixins: [stepper('alimentation'), tipContent('alimentation')],
   transition,
   data() {
     return {

@@ -76,10 +76,11 @@
 <script>
 import transition from '@/utils/pageTranstion'
 import stepper from '@/mixins/stepper'
+import tipContent from '@/mixins/tipContent'
 import transport from '../static/api/transport.json'
 
 export default {
-  mixins: [stepper('transport')],
+  mixins: [stepper('transport'), tipContent('transport')],
   transition,
   data() {
     return {
