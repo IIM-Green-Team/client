@@ -155,7 +155,7 @@ export default {
 
   &__data {
     margin: 20px 0;
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: bold;
   }
 

@@ -9,7 +9,9 @@
       <div v-for="(product, i) in fruitsTrend" :key="i" class="col-2">
         <div v-if="i <= 5">
           <p class="title">{{ product.label.fr }}</p>
-          <p class="subtitle">{{ product.CO2 }} KgCO2eq</p>
+          <p class="subtitle">
+            <span>{{ product.CO2 }}</span> KgCO2eq
+          </p>
           <span class="icon-info">{{ product.emoji }}</span>
           <p v-for="(item, index) in product.months" :key="index" class="month">
             {{ monthName[item] }}
@@ -72,7 +74,7 @@ p {
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   font-style: italic;
   color: $color-blue;
@@ -82,6 +84,11 @@ p {
   font-size: 12px;
   font-weight: 600;
   color: $color-blackgrey;
+
+  span {
+    font-size: 1.2rem;
+    color: black;
+  }
 }
 
 .col-2 {

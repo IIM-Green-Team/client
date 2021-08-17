@@ -72,7 +72,7 @@ export default {
       display: block;
       white-space: nowrap;
       margin-right: 10px;
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: bold;
       color: $color-yellow;
     }

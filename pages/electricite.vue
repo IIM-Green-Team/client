@@ -190,10 +190,11 @@ export default {
   &__conso-item {
     position: relative;
     display: inline-block;
-    padding: 16px 24px;
+    padding: 4px 24px;
     color: #fff;
     margin: 16px 0;
     &-text {
+      font-size: 1.6rem;
       padding-right: 16px;
       white-space: nowrap;
     }
@@ -201,13 +202,12 @@ export default {
     & .arrow-right {
       position: absolute;
       top: 0;
-      right: -25px;
+      right: -18px;
       width: 0;
       height: 0;
-      border-top: 25px solid transparent;
-      border-bottom: 25px solid transparent;
-
-      border-left: 25px solid green;
+      border-top: 18px solid transparent;
+      border-bottom: 19px solid transparent;
+      border-left: 18px solid green;
     }
   }
 }

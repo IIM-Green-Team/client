@@ -94,6 +94,11 @@ export default {
     padding-left: 0px;
     list-style-type: none;
     li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      letter-spacing: 0.1px;
+      color: $color-blackgrey;
+
       &:before {
         content: '- ';
       }

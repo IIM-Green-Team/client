@@ -142,6 +142,7 @@ export default {
     }
 
     .value {
+      font-size: 2rem;
       color: $color-yellow;
     }
   }

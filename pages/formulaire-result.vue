@@ -7,21 +7,21 @@
       <page-title title="Résultats" sub-title="" />
       <h2 class="h2 note-result">{{ score }} / 42</h2>
       <div class="note-details">
-        <!-- <p>
-        Aïe... le zéro déchet ne semble pas être votre priorité. Redoublez
-        d’efforts en lisant nos astuces et appliquez-les petit à petit dans
-        votre quotidien.
-      </p> -->
-        <p>
+        <p v-if="score < 15">
+          Aïe... le zéro déchet ne semble pas être votre priorité. Redoublez
+          d’efforts en lisant nos astuces et appliquez-les petit à petit dans
+          votre quotidien.
+        </p>
+        <p v-if="score > 16 && score < 30">
           Pas mal ! Mais vous pouvez mieux faire pour atteindre un mode de vie
           plus sain pour l’environnement. Assurez-vous d’avoir bien appliquer
           nos astuces dans votre quotidien.
         </p>
-        <!-- <p>
-        Bravo ! Vous êtes un bon exemple d’un mode de vie sain pour
-        l’environnement. Continuez à préserver et n’oubliez pas d’en parler
-        autour de vous en partageant notre site par exemple.
-      </p> -->
+        <p v-if="score > 36">
+          Bravo ! Vous êtes un bon exemple d’un mode de vie sain pour
+          l’environnement. Continuez à préserver et n’oubliez pas d’en parler
+          autour de vous en partageant notre site par exemple.
+        </p>
       </div>
     </div>
   </div>
@@ -53,9 +53,10 @@ export default {
 
 <style lang="scss">
 .note-result {
+  font-size: 3rem;
   margin-top: 100px;
   text-align: center;
-  color: $color-red;
+  color: $color-green;
 }
 
 .note-details {

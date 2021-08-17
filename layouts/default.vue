@@ -3,9 +3,9 @@
     <app-header />
     <Nuxt class="app-content" />
     <next-btn />
-    <light-logo />
     <app-footer />
     <app-modal />
+    <screen-size />
   </div>
 </template>
 
