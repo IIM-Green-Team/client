@@ -62,5 +62,6 @@ export default {
 .note-details {
   margin-left: 60px;
   color: $color-blackgrey;
+  font-size: 18px;
 }
 </style>

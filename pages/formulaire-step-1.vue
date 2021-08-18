@@ -1,6 +1,6 @@
 <template>
   <div class="page-formulaire">
-    <div class="col-2">step</div>
+    <div class="col-2">Etape 1</div>
 
     <div class="c-form col-8">
       <div v-for="question in questions" :key="question.id">

@@ -5,7 +5,7 @@
       sub-title="Comparez l’empreinte carbone de plusieurs aliments entre eux"
     />
     <img class="arrow-img" :src="arrow" alt="arrow" />
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap align-items-center">
       <div class="form-alim col-12 col-sm-5">
         <p class="label">Sélectionnez un aliment</p>
         <select @change="firstSelectedIndex = $event.target.value">
@@ -31,7 +31,6 @@
             {{ item.label.fr }}
           </option>
         </select>
-        <p class="label">Sélectionnez un aliment transformé</p>
       </div>
       <div class="col-12 col-sm-7">
         <div class="graph">
@@ -53,11 +52,11 @@
             <span class="value">{{ secondSelected.CO2 }}</span>
           </div>
 
-          <div class="row">
+          <!-- <div class="row">
             <img class="icon" :src="shoppingBasket" alt="shopping-basket" />
             <span :style="{ width: '5%' }" class="bar"></span>
             <span class="value">1.2</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -100,9 +99,9 @@ export default {
 
 <style lang="scss">
 .arrow-img {
-  padding: 30px 0;
-  margin-left: 35%;
-  width: 150px;
+  padding: 70px 0 5px 0;
+  margin-left: 32%;
+  width: 170px;
 }
 
 .graph {
@@ -158,6 +157,7 @@ export default {
   }
 
   select {
+    width: 70%;
     padding: 5px 0;
     margin-bottom: 50px;
     border: none;

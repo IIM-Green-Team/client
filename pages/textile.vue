@@ -58,6 +58,7 @@ export default {
 <style lang="scss">
 .textile {
   width: 100%;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
 

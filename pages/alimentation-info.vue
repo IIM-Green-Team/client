@@ -14,7 +14,7 @@
           </p>
           <span class="icon-info">{{ product.emoji }}</span>
           <p v-for="(item, index) in product.months" :key="index" class="month">
-            {{ monthName[item] }}
+            <span v-if="index <= 3"> {{ monthName[item] }}</span>
           </p>
         </div>
       </div>
@@ -86,7 +86,7 @@ p {
   color: $color-blackgrey;
 
   span {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: black;
   }
 }
@@ -110,7 +110,7 @@ p {
 }
 
 .month {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 300;
   margin: 4px;
   color: $color-blackgrey;

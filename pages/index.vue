@@ -37,7 +37,7 @@ export default {
 
 .content {
   position: absolute;
-  top: 20%;
+  top: 10%;
   width: 100%;
   text-align: center;
 
@@ -46,10 +46,15 @@ export default {
   }
 
   p {
+    font-size: 1.6rem;
     text-align: center;
     font-weight: 300;
-    line-height: 2rem;
+    line-height: 2.5rem;
     color: $color-white;
+  }
+
+  .logo {
+    width: 150px;
   }
 }
 
@@ -61,7 +66,6 @@ export default {
 }
 
 .link-intro {
-  margin-top: 50px;
   z-index: 3;
   position: absolute;
   left: 50%;
@@ -72,10 +76,6 @@ export default {
   color: $color-lightblue;
   font-size: 14px;
   text-decoration: none;
-}
-
-.col-3 {
-  height: 100vh;
 }
 
 .u-green-900 {

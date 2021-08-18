@@ -41,5 +41,7 @@ export default {
   margin-top: 50px;
   margin-left: 60px;
   color: $color-blackgrey;
+  font-size: 18px;
+  line-height: 1.5rem;
 }
 </style>
