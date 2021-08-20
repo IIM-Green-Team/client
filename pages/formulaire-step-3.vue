@@ -43,7 +43,7 @@ export default {
       questions: [
         {
           id: 8,
-          name: 'Faites-vous du trie',
+          name: 'Faites-vous du trie ?',
           values: [
             { text: 'Oui', id: 25, note: 1 },
             { text: 'Non', id: 26, note: 2 },

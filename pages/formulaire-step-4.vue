@@ -53,7 +53,7 @@ export default {
         },
         {
           id: 12,
-          name: 'Faites-vous du compostage ?',
+          name: 'Prends-tu des bains ?',
           values: [
             { text: 'Plusieurs fois par semaine', id: 37, note: 1 },
             { text: 'Une fois par mois', id: 38, note: 2 },
@@ -63,7 +63,7 @@ export default {
         },
         {
           id: 13,
-          name: 'Comment te rends tu au travail/école ?',
+          name: 'Comment fais tu la vaiselle ?',
           values: [
             { text: 'Avec un lave vaiselle', id: 41, note: 1 },
             { text: 'A la main', id: 42, note: 2 },
