@@ -43,7 +43,7 @@ export default {
       questions: [
         {
           id: 5,
-          name: 'À quelle fréquence achetez-vous vos vêtements ? ?',
+          name: 'À quelle fréquence achetez-vous vos vêtements ?',
           values: [
             { text: 'Plusieurs fois par semaine', id: 13, note: 1 },
             { text: 'Une fois par mois', id: 14, note: 2 },

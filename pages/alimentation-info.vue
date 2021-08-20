@@ -2,7 +2,7 @@
   <div>
     <page-title
       title="Recommandation alimentaire"
-      sub-title="Ce mois ci en Juin, nous pouvons consommer  comme fruits"
+      sub-title="Ce mois ci en Aout, nous pouvons consommer  comme fruits"
     />
 
     <div class="graph-info d-flex">
