@@ -63,9 +63,9 @@ export default {
         },
         {
           id: 13,
-          name: 'Comment fais tu la vaiselle ?',
+          name: 'Comment fais-tu la vaisselle ?',
           values: [
-            { text: 'Avec un lave vaiselle', id: 41, note: 1 },
+            { text: 'Avec un lave vaisselle', id: 41, note: 1 },
             { text: 'A la main', id: 42, note: 2 },
           ],
         },

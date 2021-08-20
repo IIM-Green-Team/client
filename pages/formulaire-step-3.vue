@@ -43,7 +43,7 @@ export default {
       questions: [
         {
           id: 8,
-          name: 'Faites-vous du trie ?',
+          name: 'Faites-vous du tri ?',
           values: [
             { text: 'Oui', id: 25, note: 1 },
             { text: 'Non', id: 26, note: 2 },
@@ -59,7 +59,7 @@ export default {
         },
         {
           id: 10,
-          name: 'Comment te rends tu au travail/école ?',
+          name: 'Comment te rends-tu au travail/école ?',
           values: [
             { text: 'Pied / Vélo', id: 29, note: 1 },
             { text: 'Trotinette/Vélo électrique', id: 30, note: 2 },
