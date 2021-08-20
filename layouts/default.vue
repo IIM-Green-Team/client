@@ -2,6 +2,10 @@
   <div class="app-container">
     <app-header />
     <Nuxt class="app-content" />
+    <next-btn />
+    <app-footer />
+    <app-modal />
+    <screen-size />
   </div>
 </template>
 
@@ -20,6 +24,9 @@
   overflow: hidden;
   * {
     box-sizing: border-box;
+  }
+  .app-content {
+    padding: 0 70px;
   }
 }
 </style>
